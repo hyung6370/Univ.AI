@@ -34,12 +34,12 @@ class LogicGate:
         self.xdata = xdata.reshape(4,2)  # 4개의 입력데이터 x1, x2 에 대하여 batch 처리 행렬
         self.tdata = tdata.reshape(4,1)  # 4개의 입력데이터 x1, x2 에 대한 각각의 계산 값 행렬
         
-        # 2층 hidden layer unit : 5개 가정,  가중치 W2, 바이어스 b2 초기화
-        self.W2 = np.random.rand(2,2)  # weight, 2 X 5 matrix
+        # 2층 hidden layer unit : 2개 가정,  가중치 W2, 바이어스 b2 초기화
+        self.W2 = np.random.rand(2,2)  # weight, 2 X 2 matrix
         self.b2 = np.random.rand(2)
         
         # 3층 output layer unit : 1 개 , 가중치 W3, 바이어스 b3 초기화
-        self.W3 = np.random.rand(2,1)  # weight, 5 X 1 matrix
+        self.W3 = np.random.rand(2,1)  # weight, 2 X 1 matrix
         self.b3 = np.random.rand(1)
                         
         # 학습률 learning rate 초기화
@@ -78,7 +78,6 @@ class LogicGate:
         else:
             result = 0  # False
         return result, y
-   # XOR Gate 객체 생성
   
 xdata = np.array([ [0, 0], [0, 1], [1, 0], [1, 1] ])
 tdata = np.array([0, 1, 1, 0])
